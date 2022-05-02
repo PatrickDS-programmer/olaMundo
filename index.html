@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tela de Cadastro</title>
+</head>
+
+<body>
+    <div class="main" id="main">
+        <form class="formulario" id="formulario">
+            <div class="cabecalho" id="cabecalho">
+                <h1>CADASTRO</h1>
+                <h3>Cadastre-se aqui</h3>
+            </div>
+
+            <div class="nome" id="nome">
+                <h3>Digite seu nome completo</h3>
+                <input type="text" name="cadNome" id="nomeInput">
+            </div>
+
+            <div class="cpf" id="CPF">
+                <h3>Digite seu CPF</h3>
+                <input type="text" id="cpf">
+            </div>
+
+            <div class="rg" id="RG">
+                <h3>Digite seu RG</h3>
+                <input type="text" name="cadRg" id="rg">
+            </div>
+
+            <div class="sexoMF" id="sexoMF">
+                <h3>Escolha seu sexo</h3>
+                <select class="MF" id="MF">
+                    <option value="">--- selecione uma dessas opçoes</option>
+                        <option value="Sexo
+                        M">Masculino</option>
+                        <option value="sexoF">Feminino</option>
+                </select>
+            </div>
+
+            <div class="email" id="email">
+                <h3>Digite seu Email</h3>
+                <input type="text" name="cadEmail" id="email">
+            </div>
+
+            <div class="telefone" id="telefone">
+                <h3>Digite seu número de telefone</h3>
+                <input type="text" name="cadTel" id="tel">
+            </div>
+
+            <div class="buttonVal" id="buttonVal">
+               <button onclick="validar()"><h3>ENVIAR</h3></button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        $(document).ready(function () { 
+            var $seuCampoCpf = $("#cpf");
+            $seuCampoCpf.mask('000.000.000-00', {reverse: true});
+        });
+    </script>
+    <script>
+        $(document).ready(function () { 
+            var $seuCampoCpf = $("#rg");
+            $seuCampoCpf.mask('000.000.000-00', {reverse: true});
+        });
+    </script>
+    <script>
+        $(document).ready(function () { 
+            var $seuCampoCpf = $("#tel");
+            $seuCampoCpf.mask('(00)00000-0000', {reverse: false});
+        });
+    </script>
+</body>
+</html>
